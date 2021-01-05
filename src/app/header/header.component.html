@@ -1,1 +1,54 @@
-<p>header works!</p>
+<div class="container-fluid">
+  <nav class="navbar navbar-nav navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mt-4 mt-lg-0 main-menu" id="navbarSupportedContent">
+        <a class="navbar-brand " href="#">Shivoham</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item ps-0 ps-lg-4 mt-4 mt-lg-0 ms-0 ms-lg-4" >
+            <a class="nav-link fs-lg-6" id="trendingSong" (mouseover)="mouseOverLink($event)" (mouseleave)="mouseLeaveLink($event)" aria-current="page" href="#" >Trending Songs</a>
+            <div class="nav-dropdown d-none d-lg-inline-block " id="nav_dropdown" *ngIf="this.itemHovered">
+              <img src={{this.dropdownImage}} alt=""/>
+              <div class="text-cover"></div>
+              <p class="position-absolute translate-middle">{{this.dropdownContent}}</p>
+            </div>
+          </li>
+          <li class="nav-item ps-0 ps-lg-4" >
+            <a class="nav-link" id="artists" (mouseover)="mouseOverLink($event)" (mouseleave)="mouseLeaveLink($event)" aria-current="page" href="#" >Artists</a>
+          </li>
+          <li class="nav-item ps-0 ps-lg-4" >
+            <a class="nav-link" id="posts" (mouseover)="mouseOverLink($event)" (mouseleave)="mouseLeaveLink($event)" aria-current="page" href="#" >Posts</a>
+          </li>
+          <li>
+            <div class="icons d-none d-lg-inline-block">
+              <div class="user-icon-cover">
+                <fa-icon class="user-icon" [icon]="['far', 'user']"></fa-icon>
+                <div class="user-icon-dropdown-content">
+                  <a href="#" *ngIf="!authStatus">Login</a>
+                  <a href="#" *ngIf="!authStatus">Signup</a>
+                  <a href="#" *ngIf="authStatus">My Profile</a>
+                </div>
+              </div>
+
+              <fa-icon [icon]="['fas', 'play']" data-toggle="tooltip" title="My Playlist"></fa-icon>
+            </div>
+          </li>
+          <li class="nav-item ps-0 ps-lg-4 d-inline-block d-lg-none" >
+            <a class="nav-link" href="#">Login</a>
+          </li>
+          <li class="nav-item ps-0 ps-lg-4 d-inline-block d-lg-none" >
+            <a class="nav-link" href="#">SignUp</a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </nav>
+</div>
+<div class="home-banner">
+  <img src="../../assets/home-banner.jpg" width="100%" height="800px" alt="">
+</div>
