@@ -101,6 +101,8 @@ fa-icon{
   position: absolute;
   color: white;
   text-align: center;
+  transform: scale(0);
+  transition: 0.8s
 }
 
 .nav-dropdown img{
@@ -111,6 +113,11 @@ fa-icon{
 .trending-product-dropdown{
   height: 100%;
 }
+
+#products:hover .nav-dropdown{
+  transform: scale(1);
+}
+
 /*Media Queries*/
 
 @media (min-width: 576px) { }
