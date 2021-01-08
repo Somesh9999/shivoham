@@ -1,1 +1,21 @@
-<p>products works!</p>
+<div class="row" id="product-type-list">
+  <div class="col-12 p-0">
+    <div class="container mt-5">
+      <div class="row row-cols-2 row-cols-sm-2  row-cols-md-3 g-4">
+        <div class="col" *ngFor="let product_type of product_types">
+          <div class="card text-center text-light" style="width: 100%;">
+            <div class="product-type-overlay"></div>
+            <img src={{product_type.image}} class="card-img-top" alt="...">
+            <div class="card-body bg-dark">
+              <p class="card-text">{{product_type.name}}</p>
+            </div>
+            <div class="product-overlay bg-dark"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

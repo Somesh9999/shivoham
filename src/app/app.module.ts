@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StageTeaserComponent } from './stage-teaser/stage-teaser.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductsComponent } from './products/products.component';
     HeaderComponent,
     StageTeaserComponent,
     HomeComponent,
-    ProductsComponent
+    ProductsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
