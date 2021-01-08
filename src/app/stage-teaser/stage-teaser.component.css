@@ -1,4 +1,62 @@
 /*Home Banner*/
 .home-banner{
   width: 100%;
+  position: relative;
+}
+
+.home-banner img{
+  z-index: 1;
+}
+
+.home-banner .home-banner-quote{
+  width: 36%;
+  height: 90px;
+  text-align: center;
+  color: white;
+  font-size: 2vw;
+  position: absolute;
+  top: 44%;
+  transform: translateX(170%);
+  z-index: 2;
+  border: solid 3px white;
+}
+
+.home-banner .home-banner-quote h3{
+  font-size: 2.3vw;
+  letter-spacing: 2.25px;
+  text-transform: uppercase;
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+/*Media Queries*/
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 320px) {
+  .home-banner .home-banner-quote{
+    height: 30px;
+    transform: translateX(165%);
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 768px) {
+  .home-banner .home-banner-quote{
+    height: 61px;
+    font-size: 2vw;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1440px) {
+  .home-banner .home-banner-quote{
+    height: 95px;
+    font-size: 2vw;
+  }
+  .home-banner .home-banner-quote h3{
+    height: 95px;
+    font-size: 2vw;
+  }
 }

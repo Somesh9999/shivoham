@@ -1,3 +1,24 @@
+#product-type-list{
+  text-align: center;
+}
+
+#product-type-list h3{
+  color: #34c1bb;
+  font-size: 1.7vw;
+  letter-spacing: 2.25px;
+  text-transform: uppercase;
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  width: 28%;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+#product-type-list h3:after{
+  display:block;
+  content: '';
+  border-bottom: solid 3px #34c1bb;
+}
+
 #product-type-list .card{
   -webkit-box-shadow: 0 10px 6px -6px #777;
   -moz-box-shadow: 0 10px 6px -6px #777;
@@ -27,4 +48,43 @@
   background-color: black;
   opacity: 0;
   transition: 0.3s;
+}
+
+/*Media Queries*/
+
+@media (max-width: 576px) {
+  #product-type-list h3:after{
+    border-bottom: solid 1px #34c1bb;
+  }
+}
+
+@media (min-width: 576px) {
+  #product-type-list h3:after{
+    border-bottom: solid 1px #34c1bb;
+  }
+}
+
+@media (min-width: 768px) {
+  #product-type-list h3:after{
+    border-bottom: solid 2px #34c1bb;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 992px) {
+  #product-type-list h3{
+    font-size: 1.5vw;
+    width: 28%;
+  }
+  #product-type-list h3:after{
+    border-bottom: solid 3px #34c1bb;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 1400px) {
+  #product-type-list h3{
+    font-size: 1vw;
+    width: 23%;
+  }
 }
