@@ -1,1 +1,27 @@
-<p>product-brand-list works!</p>
+<div class="row" id="product-brand-list">
+  <div class="col-12 p-0">
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <h3>Product brands</h3>
+        </div>
+      </div>
+      <div class="row row-cols-2 row-cols-sm-2  row-cols-md-3 g-4 mt-2">
+        <div class="col" *ngFor="let product_brand of product_brands">
+          <div class="card text-center text-light" style="width: 100%;">
+            <div class="product-brand-overlay" id={{product_brand.name}}></div>
+            <img src={{product_brand.image}} class="card-img-top" alt="...">
+            <div class="card-body bg-dark">
+              <p class="card-text mb-lg-4">{{product_brand.name}}</p>
+              <button class="btn w-50"> Contact</button>
+            </div>
+            <div class="product-overlay bg-dark"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

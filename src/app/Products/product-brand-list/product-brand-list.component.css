@@ -1,0 +1,199 @@
+#product-brand-list{
+  text-align: center;
+}
+
+#product-brand-list h3{
+  color: #34c1bb;
+  font-size: 1.7vw;
+  letter-spacing: 2.25px;
+  text-transform: uppercase;
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  width: 28%;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+#product-brand-list h3:after{
+  display:block;
+  content: '';
+  border-bottom: solid 3px #34c1bb;
+}
+
+#product-brand-list .card{
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+  -moz-box-shadow: 0 10px 6px -6px #777;
+  box-shadow: 0 10px 6px -6px #777;
+  background: #ffffff;
+  transition: .4s;
+  transition-timing-function: ease-in;
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+
+#product-brand-list .card:hover{
+  cursor: pointer;
+  -webkit-box-shadow: 0 35px 20px #777;
+  -moz-box-shadow: 0 35px 20px #777;
+  box-shadow: 0 35px 20px #777;
+}
+
+#product-brand-list .card:hover .product-brand-overlay{
+  opacity: 0.4;
+}
+
+#product-brand-list .card:hover .card-body{
+  height: 51%;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+}
+
+#product-brand-list .product-brand-overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0;
+  transition: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+#product-brand-list .card-body{
+  transition: .4s;
+  transition-timing-function: ease-in;
+  position: absolute;
+  top: 85%;
+  width: 100%;
+}
+
+#product-brand-list .card img{
+  height: 85%;
+}
+
+#product-brand-list .card button{
+  background-color: #34c1bb;
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+  transition: .3s;
+}
+
+#product-brand-list .card button:hover{
+  background-color: #157e7a;
+}
+
+#product-brand-list .card-body p{
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
+
+/*Media Queries*/
+
+@media (max-width: 576px) {
+  #product-brand-list h3:after{
+    border-bottom: solid 1px #34c1bb;
+  }
+  #product-brand-list .card{
+    height: 180px;
+  }
+  #product-brand-list .card-body{
+    top: 75%;
+  }
+  #product-brand-list .card:hover .card-body{
+    top: 52%;
+  }
+  #product-brand-list .card-body p{
+    font-size: 3vw;
+  }
+}
+
+@media (min-width: 576px) {
+  #product-brand-list h3:after{
+    border-bottom: solid 1px #34c1bb;
+  }
+  #product-brand-list .card{
+    height: 250px;
+  }
+  #product-brand-list .card-body{
+    top: 78%;
+  }
+  #product-brand-list .card:hover .card-body{
+    top: 63%;
+  }
+  #product-brand-list .card-body p{
+    font-size: 2vw;
+  }
+  #product-brand-list .card button{
+    font-size: 1.5vw;
+  }
+}
+
+@media (min-width: 768px) {
+  #product-brand-list h3:after{
+    border-bottom: solid 2px #34c1bb;
+  }
+  #product-brand-list .card{
+    height: 250px;
+  }
+  #product-brand-list .card-body{
+    top: 78%;
+  }
+  #product-brand-list .card:hover .card-body{
+    top: 63%;
+  }
+  #product-brand-list .card-body p{
+    font-size: 2vw;
+  }
+  #product-brand-list .card button{
+    font-size: 1.5vw;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 992px) {
+  #product-brand-list h3{
+    font-size: 1.5vw;
+    width: 28%;
+  }
+  #product-brand-list h3:after{
+    border-bottom: solid 3px #34c1bb;
+  }
+  #product-brand-list .card{
+    height: 300px;
+  }
+  #product-brand-list .card-body{
+    top: 80%;
+  }
+  #product-brand-list .card-body p{
+    font-size: 1.5vw;
+  }
+  #product-brand-list .card button{
+    font-size: 1.3vw;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 1400px) {
+  #product-brand-list h3{
+    font-size: 1vw;
+    width: 23%;
+  }
+  #product-brand-list .card{
+    height: 350px;
+  }
+  #product-brand-list .card-body{
+    top: 82%;
+  }
+  #product-brand-list .card:hover .card-body{
+    top: 54%;
+  }
+  #product-brand-list .card-body p{
+    font-size: 1.2vw;
+  }
+  #product-brand-list .card button{
+    font-size: 1.2vw;
+  }
+}
