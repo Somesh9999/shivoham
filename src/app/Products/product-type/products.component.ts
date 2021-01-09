@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-products',
@@ -17,9 +19,18 @@ export class ProductsComponent implements OnInit {
     {name:"Keyboard",image:"../../assets/artist-banner.jpg"}
   ]
 
-  constructor() { }
+  constructor(private router:Router, private productService:ProductService) { }
 
   ngOnInit(): void {
+  }
+
+  product_type_clicked(event:Event){
+    var html = event.target as HTMLElement;
+    var image= html.nextElementSibling.getAttribute('src');
+    console.log(image);
+    console.log(html.id)
+    this.productService.productTypeChanged({type:html.id.toString(),image:image});
+    this.router.navigate(["/product-brand"]);
   }
 
 }

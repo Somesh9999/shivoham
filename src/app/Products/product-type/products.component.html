@@ -8,8 +8,8 @@
       </div>
       <div class="row row-cols-2 row-cols-sm-2  row-cols-md-3 g-4 mt-2">
         <div class="col" *ngFor="let product_type of product_types">
-          <div class="card text-center text-light" style="width: 100%;">
-            <div class="product-type-overlay"></div>
+          <div class="card text-center text-light" style="width: 100%;" (click)="product_type_clicked($event)">
+            <div class="product-type-overlay" id={{product_type.name}}></div>
             <img src={{product_type.image}} class="card-img-top" alt="...">
             <div class="card-body bg-dark">
               <p class="card-text">{{product_type.name}}</p>

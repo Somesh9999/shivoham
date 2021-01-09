@@ -7,8 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { StageTeaserComponent } from './stage-teaser/stage-teaser.component';
 import { HomeComponent } from './home/home.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './Products/product-type/products.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductBrandComponent } from './Products/product-brand/product-brand.component';
+import { ProductBrandListComponent } from './Products/product-brand-list/product-brand-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FooterComponent } from './footer/footer.component';
     StageTeaserComponent,
     HomeComponent,
     ProductsComponent,
-    FooterComponent
+    FooterComponent,
+    ProductBrandComponent,
+    ProductBrandListComponent
   ],
   imports: [
     BrowserModule,
