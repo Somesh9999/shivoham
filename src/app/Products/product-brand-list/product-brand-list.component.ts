@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { ContactDialogComponent } from 'src/app/Contact/contact-dialog/contact-dialog.component';
 
 @Component({
   selector: 'app-product-brand-list',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-brand-list.component.css']
 })
 export class ProductBrandListComponent implements OnInit {
+
+  contactProduct:string;
 
   product_brands=[
     {name:"Hard-Disk",image:"../../assets/artist-banner.jpg"},
@@ -17,9 +21,28 @@ export class ProductBrandListComponent implements OnInit {
     {name:"Keyboard",image:"../../assets/artist-banner.jpg"}
   ];
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  onContactSubmit(contactform){
+
+  }
+
+  onContactClicked(event: Event){
+    var html= event.target as HTMLElement;
+    this.contactProduct= html.id;
+  }
+
+  openContactDialog(){
+    const dialogRef = this.dialog.open(ContactDialogComponent, {
+      data: {name: this.product_brands[0].name}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

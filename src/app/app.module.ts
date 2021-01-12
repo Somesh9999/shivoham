@@ -11,6 +11,18 @@ import { ProductsComponent } from './Products/product-type/products.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductBrandComponent } from './Products/product-brand/product-brand.component';
 import { ProductBrandListComponent } from './Products/product-brand-list/product-brand-list.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Anggular Material Imports
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+
+import { ContactDialogComponent } from './Contact/contact-dialog/contact-dialog.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -21,12 +33,18 @@ import { ProductBrandListComponent } from './Products/product-brand-list/product
     ProductsComponent,
     FooterComponent,
     ProductBrandComponent,
-    ProductBrandListComponent
+    ProductBrandListComponent,
+    ContactDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
