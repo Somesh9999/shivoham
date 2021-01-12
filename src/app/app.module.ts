@@ -18,8 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-
-import { ContactDialogComponent } from './Contact/contact-dialog/contact-dialog.component';
+import { ContactFormComponent } from './Contact/contact-form/contact-form.component';
 
 
 
@@ -34,7 +33,7 @@ import { ContactDialogComponent } from './Contact/contact-dialog/contact-dialog.
     FooterComponent,
     ProductBrandComponent,
     ProductBrandListComponent,
-    ContactDialogComponent
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
