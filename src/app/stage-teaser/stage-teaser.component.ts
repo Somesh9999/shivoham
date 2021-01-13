@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ProductService } from '../Products/product.service';
+import { productType } from '../Products/productType.model';
 
 @Component({
   selector: 'app-stage-teaser',
@@ -8,21 +9,15 @@ import { ProductService } from '../Products/product.service';
   styleUrls: ['./stage-teaser.component.css']
 })
 export class StageTeaserComponent implements OnInit,OnDestroy {
-  sub:Subscription;
-  stageImgUrl:string;
-  stageText:string;
+
   constructor(private productService: ProductService) { }
 
-  ngOnInit(): void {
-    this.sub= this.productService.currentProductType.subscribe(productResponse=>{
-      this.stageImgUrl=productResponse.image;
-      this.stageText=productResponse.type;
+  @Input() stageInfo:productType
 
-    })
+  ngOnInit(): void {
   }
 
   ngOnDestroy(){
-    this.sub.unsubscribe();
   }
 
 }

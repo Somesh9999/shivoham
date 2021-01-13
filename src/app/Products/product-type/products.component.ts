@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -27,10 +27,13 @@ export class ProductsComponent implements OnInit {
   product_type_clicked(event:Event){
     var html = event.target as HTMLElement;
     var image= html.nextElementSibling.getAttribute('src');
-    console.log(image);
-    console.log(html.id)
-    this.productService.productTypeChanged({type:html.id.toString(),image:image});
-    this.router.navigate(["/product-brand"]);
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        "type": html.id.toString(),
+        "image":image.toString()
+      }
+    };
+    this.router.navigate(["/product-brand"],navigationExtras);
   }
 
 }
