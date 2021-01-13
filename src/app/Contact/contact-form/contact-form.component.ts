@@ -24,6 +24,10 @@ export class ContactFormComponent implements OnInit,OnDestroy {
     });
   }
 
+  onContactFormSubmit(navContactForm){
+
+  }
+
   ngOnDestroy(){
     this.sub.unsubscribe();
   }

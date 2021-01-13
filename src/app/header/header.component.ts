@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     let navigationExtras: NavigationExtras = {
       queryParams: {
         type:"Feel Free To Contact Us",
-        image:"../../assets/home-banner.jpg"
+        image:"../../assets/contact-form-banner6.jpg"
       }
     };
     this.router.navigate(['/contact-form'], navigationExtras);

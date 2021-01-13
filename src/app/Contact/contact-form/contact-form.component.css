@@ -1,0 +1,105 @@
+.contact-form-container{
+  opacity: 1;
+  max-width: 30%;
+  margin: 0 auto;
+}
+
+.contact-form-container mat-form-field {
+  width: 100%;
+  margin-top: 3%;
+}
+
+.contact-form-container .submit-container{
+  width: 100%;
+  text-align: center;
+}
+
+.contact-form-container .submit-container .btn{
+  background-color: #34c1bb;
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  font-size: 1vw;
+  letter-spacing: 1px;
+  transition: .3s;
+  border: none;
+}
+
+.contact-form-container .submit-container .btn:hover{
+  background-color: #157e7a;
+}
+
+.contact-form-container .submit-container .btn:focus{
+  border: none;
+  box-shadow: none;
+}
+
+/*Media Queries*/
+
+/*Extra Small devices (tablets, 768px and up)*/
+@media (max-width: 576px) {
+  .contact-form-container{
+    max-width: 80%;
+    font-size: 3vw;
+  }
+  .contact-form-container h3{
+    font-size: 5vw;
+  }
+  .contact-form-container .submit-container .btn{
+    font-size: 3vw;
+  }
+}
+
+/*Small devices (tablets, 768px and up)*/
+@media (min-width: 576px) {
+  .contact-form-container{
+    max-width: 50%;
+    font-size: 2vw;
+  }
+  .contact-form-container h3{
+    font-size: 3vw;
+  }
+  .contact-form-container .submit-container .btn{
+    font-size: 2vw;
+  }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .contact-form-container{
+    max-width: 50%;
+    font-size: 2vw;
+  }
+  .contact-form-container h3{
+    font-size: 3vw;
+  }
+  .contact-form-container .submit-container .btn{
+    font-size: 2vw;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .contact-form-container{
+    max-width: 45%;
+    font-size: 1.5vw;
+  }
+  .contact-form-container h3{
+    font-size: 2vw;
+  }
+  .contact-form-container .submit-container .btn{
+    font-size: 1.3vw;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1400px) {
+  .contact-form-container{
+    max-width: 40%;
+    font-size: 1.3vw;
+  }
+  .contact-form-container h3{
+    font-size: 1.8vw;
+  }
+  .contact-form-container .submit-container .btn{
+    font-size: 1.3vw;
+  }
+}

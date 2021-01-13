@@ -1,1 +1,33 @@
 <app-stage-teaser [stageInfo]="this.stageInfo"></app-stage-teaser>
+<div class="row">
+  <div class="col-12">
+    <div class="container contact-form-container">
+      <h3 class="text-center mt-5">Let's Talk</h3>
+      <form #navContactForm="ngForm" (ngSubmit)="onContactFormSubmit(navContactForm)">
+        <mat-form-field >
+          <input matInput ngModel type="text" name="name" placeholder="Full Name" required #name="ngModel">
+          <mat-error *ngIf="name.invalid"> Please enter a valid email address </mat-error>
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput ngModel type="text" name="subject" placeholder="Subject" required #subject="ngModel">
+          <mat-error *ngIf="subject.invalid"> Please enter a valid email address </mat-error>
+        </mat-form-field>
+        <mat-form-field >
+          <textarea matInput ngModel name="message" placeholder="Message" required #message="ngModel"></textarea>
+          <mat-error *ngIf="message.invalid"> Please enter a valid email address </mat-error>
+        </mat-form-field>
+        <mat-form-field >
+          <input matInput ngModel type="text" name="email" placeholder="Email" required email #email="ngModel">
+          <mat-error *ngIf="email.invalid"> Please enter a valid email address </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput ngModel type="text" name="contact" placeholder="Contact Number" #contact="ngModel" pattern="^((\\+91-?)|0)?[0-9]{10}$">
+          <mat-error *ngIf="contact.invalid"> Please enter a valid Contact Number </mat-error>
+        </mat-form-field>
+        <div class="submit-container">
+          <button type="button" class="btn mt-3">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

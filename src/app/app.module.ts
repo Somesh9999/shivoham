@@ -19,6 +19,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { ContactFormComponent } from './Contact/contact-form/contact-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -38,6 +39,7 @@ import { ContactFormComponent } from './Contact/contact-form/contact-form.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FontAwesomeModule,
     FormsModule,
     BrowserAnimationsModule,
