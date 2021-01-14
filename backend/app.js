@@ -6,7 +6,7 @@ const ContactEnquiryData= require('./models/contactEnquiryData');
 const nodemailer= require('nodemailer');
 const app= express();
 
-mongoose.connect("mongodb+srv://somesh:pMgs6O2AaXJlJsbM@cluster0.immmq.mongodb.net/shivoham?retryWrites=true&w=majority").then(()=>{
+mongoose.connect("mongodb+srv://somesh:"+process.env.MONGO_ATLAS_PW+"@cluster0.immmq.mongodb.net/shivoham?retryWrites=true&w=majority").then(()=>{
   console.log("Connected Successfully");
 }).catch(()=>{
   console.log("Connection Failed");
