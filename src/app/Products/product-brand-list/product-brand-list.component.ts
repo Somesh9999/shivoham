@@ -1,4 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { contactEnquiry } from 'src/app/Contact/contact-enquiry.model';
+import { ContactService } from 'src/app/Contact/contact.service';
 
 @Component({
   selector: 'app-product-brand-list',
@@ -8,6 +10,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 export class ProductBrandListComponent implements OnInit {
 
   contactProduct:string;
+  contactEnquiryData:contactEnquiry;
 
   product_brands=[
     {name:"Hard-Disk",image:"../../assets/artist-banner.jpg"},
@@ -19,12 +22,25 @@ export class ProductBrandListComponent implements OnInit {
     {name:"Keyboard",image:"../../assets/artist-banner.jpg"}
   ];
 
-  constructor() { }
+  constructor(private contactService:ContactService) { }
+
+  @ViewChild('closebutton') closebutton;
 
   ngOnInit(): void {
   }
 
-  onContactSubmit(contactform){
+  onContactSubmit(contactEnquiryForm){
+    if(contactEnquiryForm.invalid){
+      return;
+    }
+    this.contactEnquiryData={
+      product:this.contactProduct,
+      email:contactEnquiryForm.value.email,
+      contact:contactEnquiryForm.value.contact
+    }
+    this.contactService.addContactEnquiryData(this.contactEnquiryData);
+    this.closebutton.nativeElement.click();
+    contactEnquiryForm.reset();
 
   }
 

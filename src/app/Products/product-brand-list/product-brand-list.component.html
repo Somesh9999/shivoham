@@ -33,11 +33,11 @@
           <h5 class="modal-title align-center" id="exampleModalLabel">Shivoham</h5>
         </div>
 
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <h5>Enquiry for "{{contactProduct}}"</h5>
-        <form #contactform="ngForm" (ngSubmit)="onContactSubmit(contactform)">
+        <form #contactEnquiryForm="ngForm" (ngSubmit)="onContactSubmit(contactEnquiryForm)">
           <mat-form-field >
             <input matInput ngModel type="text" name="email" placeholder="Email" required email #email="ngModel">
             <mat-error *ngIf="email.invalid"> Please enter a valid email address </mat-error>
@@ -47,10 +47,10 @@
             <input matInput ngModel type="text" name="contact" placeholder="Contact Number" #contact="ngModel" pattern="^((\\+91-?)|0)?[0-9]{10}$">
             <mat-error *ngIf="contact.invalid"> Please enter a valid Contact Number </mat-error>
           </mat-form-field>
+          <div class="modal-footer d-block">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
         </form>
-      </div>
-      <div class="modal-footer d-block">
-        <button type="button" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>

@@ -1,10 +1,27 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { contactFormData } from './contact-form-data.model';
+import { Router } from '@angular/router';
+import { contactEnquiry } from './contact-enquiry.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private router:Router) { }
+
+  addContactFormData(contactFormData:contactFormData){
+    this.http.post<{message:string}>("http://localhost:3030/api/contact/addContactFormData",contactFormData).subscribe(res=>{
+      console.log(res.message);
+      this.router.navigate(['/']);
+    });
+  }
+
+  addContactEnquiryData(contactEnquiryData:contactEnquiry){
+    this.http.post<{message:string}>("http://localhost:3030/api/contact/addContactEnquiryData",contactEnquiryData).subscribe(res=>{
+      console.log(res.message);
+    });
+  }
+
 }

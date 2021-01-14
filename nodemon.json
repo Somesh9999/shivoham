@@ -1,6 +1,8 @@
 {
   "env":{
     "JWT_KEY":"secret_this_should_be_longer",
-    "MONGO_ATLAS_PW":"pMgs6O2AaXJlJsbM"
+    "MONGO_ATLAS_PW":"pMgs6O2AaXJlJsbM",
+    "ORG_EMAIL":"shivohament5@gmail.com",
+    "ORG_PASS":"Shivoham@555"
   }
 }
