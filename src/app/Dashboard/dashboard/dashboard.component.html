@@ -15,13 +15,35 @@
             <input type="file" #filePicker (change)="onImagePicked($event)">
           </div>
           <div class="image-preview" *ngIf="imagePreview!='' && imagePreview">
-            <img [src]="imagePreview" [alt]="'post.title'">
+            <img [src]="imagePreview" alt="...">
           </div>
           <button mat-raised-button color="primary" type="submit"> Add </button>
         </form>
       </mat-card>
     </mat-tab>
-    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Product Brand">
+      <mat-card>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <form [formGroup]="this.productBrandForm" (submit)="onCreateProductBrand()">
+          <mat-form-field class="text-center">
+            <input matInput formControlName="productBrandType" type="text" placeholder="Product Type"/>
+            <mat-error *ngIf="productBrandForm.get('productBrandType').invalid">Please Enter valid input</mat-error>
+          </mat-form-field>
+          <mat-form-field class="text-center">
+            <input matInput formControlName="productBrand" type="text" placeholder="Product Brand"/>
+            <mat-error *ngIf="productBrandForm.get('productBrand').invalid">Please Enter valid input</mat-error>
+          </mat-form-field>
+          <div>
+            <button type="button" mat-stroked-button (click)="brandFilePicker.click()"> Pick Image </button>
+            <input type="file" #brandFilePicker (change)="onBrandImagePicked($event)">
+          </div>
+          <div class="image-preview" *ngIf="brandImagePreview!='' && brandImagePreview">
+            <img [src]="brandImagePreview" alt="...">
+          </div>
+          <button mat-raised-button color="primary" type="submit"> Add </button>
+        </form>
+      </mat-card>
+    </mat-tab>
     <mat-tab label="Third"> Content 3 </mat-tab>
   </mat-tab-group>
 </div>

@@ -12,14 +12,20 @@
             <div class="product-brand-overlay"></div>
             <img src={{product_brand.image}} class="card-img-top" alt="...">
             <div class="card-body bg-dark">
-              <p class="card-text mb-lg-4">{{product_brand.name}}</p>
+              <p class="card-text mb-lg-4">{{product_brand.brand}}</p>
               <!-- Button trigger modal -->
-              <button id={{product_brand.name}} class="btn w-50" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onContactClicked($event)"> Contact</button>
+              <button id={{product_brand.brand}} class="btn w-50" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onContactClicked($event)"> Contact</button>
             </div>
             <div class="product-overlay bg-dark"></div>
           </div>
         </div>
       </div>
+      <mat-paginator [length]="totalPosts"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                (page)="onPageChanged($event)">
+                *ngIf="product_type.length>0"
+      </mat-paginator>
     </div>
   </div>
 </div>

@@ -1,6 +1,11 @@
-import { Component, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild, Input } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
+import { Subscription } from 'rxjs';
 import { contactEnquiry } from 'src/app/Contact/contact-enquiry.model';
 import { ContactService } from 'src/app/Contact/contact.service';
+import { stageInfo } from 'src/app/stage-teaser/stageInfo.model';
+import { ProductService } from '../product.service';
+import { productBrand } from '../productBrand.model';
 
 @Component({
   selector: 'app-product-brand-list',
@@ -12,21 +17,28 @@ export class ProductBrandListComponent implements OnInit {
   contactProduct:string;
   contactEnquiryData:contactEnquiry;
 
-  product_brands=[
-    {name:"Hard-Disk",image:"../../assets/artist-banner.jpg"},
-    {name:"Graphic Card",image:"../../assets/artist-banner.jpg"},
-    {name:"RAM",image:"../../assets/artist-banner.jpg"},
-    {name:"Mother Board",image:"../../assets/artist-banner.jpg"},
-    {name:"Monitor",image:"../../assets/artist-banner.jpg"},
-    {name:"Display",image:"../../assets/artist-banner.jpg"},
-    {name:"Keyboard",image:"../../assets/artist-banner.jpg"}
-  ];
+  product_brands:productBrand[]=[];
+  sub=new Subscription();
 
-  constructor(private contactService:ContactService) { }
+  @Input() stageInfo:stageInfo; //To get productType that is passed to the stage section by parent component
+
+  //Pagination
+  totalPosts= 1;
+  pageSize= 3;
+  pageSizeOptions=[3,6,9];
+  currentPage=1;
+
+  constructor(private contactService:ContactService,private productService:ProductService) { }
 
   @ViewChild('closebutton') closebutton;
 
   ngOnInit(): void {
+    this.productService.getProductBrand(this.pageSize,this.currentPage,this.stageInfo.stageText);
+    this.sub=this.productService.getProductBrandSubject().subscribe((productBrandData=>{
+      this.product_brands=productBrandData.productBrand;
+      this.totalPosts=productBrandData.productBrandCount;
+      console.log(this.product_brands);
+    }))
   }
 
   onContactSubmit(contactEnquiryForm){
@@ -47,6 +59,12 @@ export class ProductBrandListComponent implements OnInit {
   onContactClicked(event: Event){
     var html= event.target as HTMLElement;
     this.contactProduct= html.id;
+  }
+
+  onPageChanged(pageData: PageEvent){
+    this.currentPage= pageData.pageIndex +1;
+    this.pageSize= pageData.pageSize;
+    this.productService.getProductBrand(this.pageSize,this.currentPage,this.stageInfo.stageText);
   }
 
 }

@@ -6,6 +6,10 @@ const productController= require('../controllers/product');
 
 router.post("/addProductType",extractFile,productController.addProductType);
 
+router.post("/addProductBrand",extractFile,productController.addProductBrand);
+
 router.get("/getProductType",productController.getProductType);
+
+router.get("/getProductBrand",productController.getProductBrand);
 
 module.exports=router;
