@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../product.service';
-import { productType } from '../productType.model';
+import { stageInfo } from 'src/app/stage-teaser/stageInfo.model';
 
 @Component({
   selector: 'app-product-brand',
@@ -11,7 +11,7 @@ import { productType } from '../productType.model';
 })
 export class ProductBrandComponent implements OnInit,OnDestroy {
 
-  productType:productType;
+  stageInfo:stageInfo;
 
 
   sub= new Subscription();
@@ -20,9 +20,9 @@ export class ProductBrandComponent implements OnInit,OnDestroy {
 
   ngOnInit(): void {
     this.sub= this.activatedRoute.queryParamMap.subscribe(queryData=>{
-      this.productType={
-        type:queryData.get('type'),
-        image:queryData.get('image')
+      this.stageInfo={
+        stageText:queryData.get('stageText'),
+        stageImage:queryData.get('stageImage')
       };
     });
   }

@@ -1,0 +1,28 @@
+<app-stage-teaser [stageInfo]="this.stageInfo"></app-stage-teaser>
+<div class="container text-center w-50">
+  <mat-tab-group>
+    <mat-tab label="Product Type">
+      <mat-card>
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <form [formGroup]="this.form" (submit)="onCreateProductType()" *ngIf="!isLoading">
+          <mat-form-field class="text-center">
+            <input matInput formControlName="productType" type="text" placeholder="Product Type"/>
+            <mat-error *ngIf="form.get('productType').invalid">Please Enter valid input</mat-error>
+            <!--<mat-error *ngIf="postForm.getControl('title').invalid">Please Enter valid input</mat-error>-->
+          </mat-form-field>
+          <div>
+            <button type="button" mat-stroked-button (click)="filePicker.click()"> Pick Image </button>
+            <input type="file" #filePicker (change)="onImagePicked($event)">
+          </div>
+          <div class="image-preview" *ngIf="imagePreview!='' && imagePreview">
+            <img [src]="imagePreview" [alt]="'post.title'">
+          </div>
+          <button mat-raised-button color="primary" type="submit"> Add </button>
+        </form>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+</div>
+

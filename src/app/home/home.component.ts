@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { productType } from '../Products/productType.model';
+import { stageInfo } from '../stage-teaser/stageInfo.model';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,14 @@ import { productType } from '../Products/productType.model';
 })
 export class HomeComponent implements OnInit {
 
-  productType:productType;
+  stageInfo:stageInfo;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.productType={
-      type:"Some Quote Text",
-      image:"../../assets/home-banner.jpg"
+    this.stageInfo={
+      stageText:"Some Quote Text",
+      stageImage:"../../assets/home-banner.jpg"
     }
   }
 

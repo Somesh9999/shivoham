@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { productType } from 'src/app/Products/productType.model';
+import { stageInfo } from 'src/app/stage-teaser/stageInfo.model';
 import { contactFormData } from '../contact-form-data.model';
 import { ContactService } from '../contact.service';
 
@@ -12,7 +12,7 @@ import { ContactService } from '../contact.service';
 })
 export class ContactFormComponent implements OnInit,OnDestroy {
 
-  stageInfo:productType;
+  stageInfo:stageInfo;
   contactFormData:contactFormData;
   sub:Subscription;
 
@@ -21,8 +21,8 @@ export class ContactFormComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
     this.sub= this.activatedRoute.queryParamMap.subscribe(queryData=>{
       this.stageInfo={
-        type:queryData.get("type").toString(),
-        image:queryData.get("image").toString()
+        stageText:queryData.get("stageText").toString(),
+        stageImage:queryData.get("stageImage").toString()
       }
     });
   }

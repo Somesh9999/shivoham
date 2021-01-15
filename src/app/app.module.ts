@@ -14,12 +14,14 @@ import { ProductBrandListComponent } from './Products/product-brand-list/product
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//Anggular Material Imports
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+//Angular Material Module import
+import {AngularMaterialModule} from './angular-material.module';
+
 import { ContactFormComponent } from './Contact/contact-form/contact-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
+import { AdminLoginComponent } from './Dashboard/admin-login/admin-login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -34,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ProductBrandComponent,
     ProductBrandListComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    DashboardComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule,
-    MatInputModule,
-    MatButtonModule
+    AngularMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
