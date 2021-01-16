@@ -53,6 +53,7 @@
             <input matInput ngModel type="text" name="contact" placeholder="Contact Number" #contact="ngModel" pattern="^((\\+91-?)|0)?[0-9]{10}$">
             <mat-error *ngIf="contact.invalid"> Please enter a valid Contact Number </mat-error>
           </mat-form-field>
+          <br>
           <mat-form-field class="mt-3">
             <textarea matInput ngModel type="text" name="description" placeholder="Description" #description="ngModel"></textarea>
           </mat-form-field>
