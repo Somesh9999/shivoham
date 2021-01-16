@@ -12,6 +12,10 @@ mat-spinner{
   margin: auto;
 }
 
+.mat-tab-labels{
+  display: block;
+}
+
 input[type="file"]{
   visibility: hidden;
 }
