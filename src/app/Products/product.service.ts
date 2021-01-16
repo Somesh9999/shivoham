@@ -33,7 +33,6 @@ export class ProductService {
     productTypeData.append("image",imageFile, type);
     this.http.post<{message:string, productType:productType}>("http://localhost:3030/api/product/addProductType",productTypeData).subscribe(res=>{
       console.log(res.message);
-      this.router.navigate(["/"]);
     });
   }
 
@@ -61,7 +60,6 @@ export class ProductService {
     })).subscribe(transformedData=>{
       this.productType=transformedData.productType;
       this.productTypeUpdated.next({productType:[...this.productType],productCount:transformedData.productCount});
-      this.router.navigate(["/"]);
     });
   }
 

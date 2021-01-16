@@ -14,7 +14,7 @@ mongoose.connect("mongodb+srv://somesh:"+process.env.MONGO_ATLAS_PW+"@cluster0.i
   console.log("Connection Failed");
 });
 
-async function sendMailToUser(userEmail,callback){
+/*async function sendMailToUser(userEmail,callback){
   let transporter= nodemailer.createTransport({
     host:"smtp.gmail.com",
     port:587,
@@ -35,7 +35,7 @@ async function sendMailToUser(userEmail,callback){
   let info= await transporter.sendMail(mailOptions);
 
   callback(info);
-}
+}*/
 
 async function sendMailToEnt(contactFormData,callback){
 
@@ -140,9 +140,6 @@ app.post("/api/contact/addContactFormData",(req,res,next)=>{
     contact:req.body.contact
   });
   contactFormData.save().then(message=>{
-    sendMailToUser(req.body.email,info=>{
-      console.log("Mail Sent To User");
-    });
     sendMailToEnt(contactFormData,info=>{
       console.log("Mail Sent To Enterprise");
     });
@@ -154,12 +151,10 @@ app.post("/api/contact/addContactEnquiryData",(req,res,next)=>{
   const contactEnquiryData= new ContactEnquiryData({
     product:req.body.product,
     email:req.body.email,
-    contact:req.body.contact
+    contact:req.body.contact,
+    description:req.body.description
   });
   contactEnquiryData.save().then(message=>{
-    sendMailToUser(req.body.email,info=>{
-      console.log("Mail Sent To User");
-    });
     sendEnquiryMailToEnt(contactEnquiryData,info=>{
       console.log("Mail Sent To Enterprise");
     });

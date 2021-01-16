@@ -48,7 +48,8 @@ export class ProductBrandListComponent implements OnInit {
     this.contactEnquiryData={
       product:this.contactProduct,
       email:contactEnquiryForm.value.email,
-      contact:contactEnquiryForm.value.contact
+      contact:contactEnquiryForm.value.contact,
+      description:contactEnquiryForm.value.description
     }
     this.contactService.addContactEnquiryData(this.contactEnquiryData);
     this.closebutton.nativeElement.click();

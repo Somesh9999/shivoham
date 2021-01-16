@@ -3,16 +3,18 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col-12">
-          <h3>Product Types</h3>
+          <h3>Product types</h3>
         </div>
       </div>
       <div class="row row-cols-2 row-cols-sm-2  row-cols-md-3 g-4 mt-2">
         <div class="col" *ngFor="let product_type of product_types">
-          <div class="card text-center text-light" style="width: 100%;" (click)="product_type_clicked($event)">
-            <div class="product-type-overlay" id={{product_type.type}}></div>
-            <img [src]="product_type.image" [alt]="product_type.type" class="card-img-top">
+          <div class="card text-center text-light" style="width: 100%;">
+            <div class="product-type-overlay"></div>
+            <img src={{product_type.image}} class="card-img-top" alt="...">
             <div class="card-body bg-dark">
-              <p class="card-text">{{product_type.type}}</p>
+              <p class="card-text mb-lg-4">{{product_type.type}}</p>
+              <!-- Button trigger modal -->
+              <button id={{product_type.type}} class="btn w-50" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onContactClicked($event)"> Contact</button>
             </div>
             <div class="product-overlay bg-dark"></div>
           </div>
@@ -28,5 +30,37 @@
   </div>
 </div>
 
+<!-- Modal-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <div class="logo-container">
+          <h5 class="modal-title align-center" id="exampleModalLabel">Shivoham</h5>
+        </div>
 
-
+        <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="unfocus($event)"></button>
+      </div>
+      <div class="modal-body">
+        <h5>Enquiry for "{{contactProduct}}"</h5>
+        <form #contactEnquiryForm="ngForm" (ngSubmit)="onContactSubmit(contactEnquiryForm)">
+          <mat-form-field >
+            <input matInput ngModel type="text" name="email" placeholder="Email" required email #email="ngModel">
+            <mat-error *ngIf="email.invalid"> Please enter a valid email address </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="mt-3">
+            <input matInput ngModel type="text" name="contact" placeholder="Contact Number" #contact="ngModel" pattern="^((\\+91-?)|0)?[0-9]{10}$">
+            <mat-error *ngIf="contact.invalid"> Please enter a valid Contact Number </mat-error>
+          </mat-form-field>
+          <mat-form-field class="mt-3">
+            <textarea matInput ngModel type="text" name="description" placeholder="Description" #description="ngModel"></textarea>
+          </mat-form-field>
+          <div class="modal-footer d-block">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,8 +24,11 @@
   -moz-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
   background: #ffffff;
-  transition: .3s;
+  transition: .4s;
+  transition-timing-function: ease-in;
   position: relative;
+  height: 350px;
+  overflow: hidden;
 }
 
 #product-type-list .card:hover{
@@ -39,6 +42,13 @@
   opacity: 0.4;
 }
 
+#product-type-list .card:hover .card-body{
+  height: 51%;
+  position: absolute;
+  top: 70%;
+  width: 100%;
+}
+
 #product-type-list .product-type-overlay{
   width: 100%;
   height: 100%;
@@ -48,6 +58,71 @@
   background-color: black;
   opacity: 0;
   transition: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+#product-type-list .card-body{
+  transition: .4s;
+  transition-timing-function: ease-in;
+  position: absolute;
+  top: 85%;
+  width: 100%;
+}
+
+#product-type-list .card img{
+  height: 85%;
+}
+
+#product-type-list .card button{
+  background-color: #34c1bb;
+  font-family: "typeon Bold",Helvetica,Arial,sans-serif;
+  font-size: 2vw;
+  font-weight: bold;
+  transition: .3s;
+  border: none;
+}
+
+#product-type-list .card button:hover, .modal-footer button:hover{
+  background-color: #157e7a;
+}
+
+#product-type-list .card .btn:focus, .modal-footer .btn-primary:focus{
+  border: none;
+  box-shadow: none;
+}
+
+#product-type-list .card-body p{
+  font-family: "typeon Bold",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+}
+
+.modal-header .logo-container{
+  background-color: white;
+  border-radius: 50px;
+  border: solid 8px #34c1bb;
+  border-bottom: 0;
+  position: absolute;
+  width: 25%;
+  height: 60px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-35px);
+}
+
+.modal-content{
+  border-radius: 25px;
+  border: solid 8px #34c1bb;
+}
+
+.modal-body h5{
+  margin: 6%;
+}
+
+.modal-footer button{
+  background-color: #34c1bb;
+  font-family: "typeon Bold",Helvetica,Arial,sans-serif;
+  font-weight: bold;
+  transition: .3s;
+  border: none;
 }
 
 /*Media Queries*/
@@ -56,17 +131,72 @@
   #product-type-list h3:after{
     border-bottom: solid 1px #34c1bb;
   }
+  #product-type-list .card{
+    height: 180px;
+  }
+  #product-type-list .card-body{
+    top: 75%;
+  }
+  #product-type-list .card:hover .card-body{
+    top: 52%;
+  }
+  #product-type-list .card-body p{
+    font-size: 3vw;
+  }
+  .modal-header .logo-container h5{
+    font-size: 4vw;
+  }
+  .modal-body{
+    font-size: 4vw;
+  }
+  .modal-body h5{
+    font-size: 5vw;
+  }
+  .modal-footer button{
+    font-size: 4vw;
+  }
+
 }
 
 @media (min-width: 576px) {
   #product-type-list h3:after{
     border-bottom: solid 1px #34c1bb;
   }
+  #product-type-list .card{
+    height: 250px;
+  }
+  #product-type-list .card-body{
+    top: 78%;
+  }
+  #product-type-list .card:hover .card-body{
+    top: 63%;
+  }
+  #product-type-list .card-body p{
+    font-size: 2vw;
+  }
+  #product-type-list .card button{
+    font-size: 1.5vw;
+  }
 }
 
 @media (min-width: 768px) {
   #product-type-list h3:after{
     border-bottom: solid 2px #34c1bb;
+  }
+  #product-type-list .card{
+    height: 250px;
+  }
+  #product-type-list .card-body{
+    top: 78%;
+  }
+  #product-type-list .card:hover .card-body{
+    top: 63%;
+  }
+  #product-type-list .card-body p{
+    font-size: 2vw;
+  }
+  #product-type-list .card button{
+    font-size: 1.5vw;
   }
 }
 
@@ -79,6 +209,18 @@
   #product-type-list h3:after{
     border-bottom: solid 3px #34c1bb;
   }
+  #product-type-list .card{
+    height: 300px;
+  }
+  #product-type-list .card-body{
+    top: 80%;
+  }
+  #product-type-list .card-body p{
+    font-size: 1.5vw;
+  }
+  #product-type-list .card button{
+    font-size: 1.3vw;
+  }
 }
 
 /*Large devices (desktops, 992px and up)*/
@@ -86,5 +228,20 @@
   #product-type-list h3{
     font-size: 1vw;
     width: 23%;
+  }
+  #product-type-list .card{
+    height: 350px;
+  }
+  #product-type-list .card-body{
+    top: 82%;
+  }
+  #product-type-list .card:hover .card-body{
+    top: 54%;
+  }
+  #product-type-list .card-body p{
+    font-size: 1.2vw;
+  }
+  #product-type-list .card button{
+    font-size: 1.2vw;
   }
 }
