@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
 
   //Pagination
   totalPosts= 1;
-  pageSize= 3;
+  pageSize= 6;
   pageSizeOptions=[3,6,9];
   currentPage=1;
 

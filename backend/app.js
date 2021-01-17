@@ -12,8 +12,6 @@ mongoose.connect("mongodb+srv://somesh:"+process.env.MONGO_ATLAS_PW+"@cluster0.i
   console.log("Connection Failed");
 });
 
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
