@@ -33,7 +33,6 @@ export class ProductsComponent implements OnInit {
     this.sub=this.productService.getProductTypeSubject().subscribe((productData=>{
       this.product_types=productData.productType;
       this.totalPosts=productData.productCount;
-      console.log(this.product_types);
     }))
   }
 
@@ -81,8 +80,6 @@ export class ProductsComponent implements OnInit {
   }
 
   unfocus(){
-
-    console.log(this.modalButton.nativeElement);
     setTimeout(() => {
       this.modalButton.nativeElement.focus();
     }, 1);
