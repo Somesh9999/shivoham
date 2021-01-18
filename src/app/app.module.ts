@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Dashboard/dashboard/dashboard.component';
 import { AdminLoginComponent } from './Dashboard/admin-login/admin-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -38,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductBrandListComponent,
     ContactFormComponent,
     DashboardComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

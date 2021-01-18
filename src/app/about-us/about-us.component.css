@@ -1,0 +1,107 @@
+.company-history{
+  width: 75%;
+  margin: 0 auto;
+}
+
+.company-hist-header{
+  text-align: center;
+  color: #34c1bb;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+}
+
+.company-hist-footer{
+  text-align: center;
+  color: #34c1bb;
+  letter-spacing: 1px;
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+}
+
+.company-hist-body{
+  color: black;
+  font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
+  font-size: 2.3vw;
+  text-align: center;
+}
+
+.company-hist-header h3{
+  font-size: 2.5vw;
+}
+
+.company-hist-footer h3{
+  text-transform: uppercase;
+  font-size: 2.5vw;
+}
+
+.company-hist-header p{
+  font-size: 1.7vw;
+}
+
+.company-hist-footer p{
+  font-size: 2vw;
+}
+
+/*Media Queries*/
+
+/*Extra Small devices (tablets, 768px and up)*/
+@media (max-width: 576px) {}
+
+/*Small devices (tablets, 768px and up)*/
+@media (min-width: 576px) {}
+
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .company-hist-header h3, .company-hist-footer h3{
+    font-size: 2vw;
+  }
+
+  .company-hist-header p{
+    font-size: 1vw;
+  }
+
+  .company-hist-footer p{
+    font-size: 1.5vw;
+  }
+
+  .company-hist-body{
+    font-size: 1.5vw;
+  }
+}
+
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .company-hist-header h3, .company-hist-footer h3{
+    font-size: 1.7vw;
+  }
+  .company-hist-header p{
+    font-size: 0.8vw;
+  }
+  .company-hist-footer p{
+    font-size: 1.3vw;
+  }
+  .company-hist-body{
+    font-size: 1.3vw;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1400px) {
+  .company-hist-header h3, .company-hist-footer h3{
+    font-size: 1.5vw;
+  }
+  .company-hist-header p{
+    font-size: 0.7vw;
+  }
+  .company-hist-footer p{
+    font-size: 1vw;
+  }
+  .company-hist-body{
+    font-size: 1vw;
+  }
+}
+

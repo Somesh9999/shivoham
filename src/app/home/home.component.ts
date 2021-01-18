@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.stageInfo={
-      stageText:"Some Quote Text",
-      stageImage:"../../assets/home-banner-cropped.jpg"
+      stageText:"If You Don\'t Succeed at First, Call it Version 1.0",
+      stageImage:"../../assets/home-banner.jpg"
     }
   }
 

@@ -22,7 +22,7 @@
 }
 
 .home-banner .home-banner-quote h3{
-  font-size: 2.3vw;
+  font-size: 1.3vw;
   letter-spacing: 2.25px;
   text-transform: uppercase;
   font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
@@ -33,30 +33,68 @@
 
 /*Media Queries*/
 
+@media (max-width: 576px) {
+
+}
+
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 320px) {
+  .home-banner{
+    height: 300px;
+  }
+
   .home-banner .home-banner-quote{
-    height: 30px;
+    height: 50px;
     transform: translateX(165%);
+    border: solid 2px white;
+  }
+
+  .home-banner .home-banner-quote h3{
+    font-size: 2vw;
   }
 }
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 768px) {
+  .home-banner{
+    height: 500px;
+  }
   .home-banner .home-banner-quote{
     height: 61px;
     font-size: 2vw;
+  }
+  .home-banner .home-banner-quote h3{
+    font-size: 1.3vw;
   }
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1440px) {
+  .home-banner{
+    height: 800px;
+  }
   .home-banner .home-banner-quote{
-    height: 95px;
-    font-size: 2vw;
+    height: 115px;
+    font-size: 1.5vw;
   }
   .home-banner .home-banner-quote h3{
-    height: 95px;
-    font-size: 2vw;
+    height: 100px;
+    font-size: 1.5vw;
+    line-height: 33px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .home-banner{
+    height: 1000px;
+  }
+  .home-banner .home-banner-quote{
+    height: 115px;
+    font-size: 1.2vw;
+  }
+  .home-banner .home-banner-quote h3{
+    height: 100px;
+    font-size: 1.2vw;
+    line-height: 33px;
   }
 }

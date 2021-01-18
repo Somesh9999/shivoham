@@ -10,7 +10,7 @@
         <div class="col" *ngFor="let product_type of product_types">
           <div class="card text-center text-light" style="width: 100%;">
             <div class="product-type-overlay"></div>
-            <img src={{product_type.image}} class="card-img-top" alt="...">
+            <img src="../../../assets/{{product_type.type}}.jpg" class="card-img-top" alt="...">
             <div class="card-body bg-dark">
               <p class="card-text mb-lg-4">{{product_type.type}}</p>
               <!-- Button trigger modal -->
