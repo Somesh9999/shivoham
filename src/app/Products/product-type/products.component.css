@@ -82,6 +82,10 @@
   border: none;
 }
 
+#product-type-list .card button:focus + .card{
+  background-color:white;
+}
+
 #product-type-list .card button:hover, .modal-footer button:hover{
   background-color: #157e7a;
 }
@@ -180,6 +184,9 @@
 }
 
 @media (min-width: 768px) {
+  #product-type-list .card button:focus + .card{
+    background-color:white;
+  }
   #product-type-list h3{
     font-size: 2vw;
   }
@@ -206,6 +213,9 @@
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 992px) {
+  #product-type-list .card button:focus + .card{
+    background-color:white;
+  }
   #product-type-list h3{
     font-size: 1.5vw;
     width: 28%;
@@ -229,6 +239,9 @@
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 1400px) {
+  #product-type-list .card button:focus + .card{
+    background-color:white;
+  }
   #product-type-list h3{
     font-size: 1vw;
     width: 23%;

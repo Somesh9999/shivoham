@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Router, NavigationExtras } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
   pageSizeOptions=[3,6,9];
   currentPage=1;
 
-  constructor(private router:Router, private productService:ProductService, private contactService:ContactService) { }
+  constructor(private router:Router, private productService:ProductService, private contactService:ContactService,private el: ElementRef) { }
 
   ngOnInit(): void {
     this.productService.getProductType(this.pageSize,this.currentPage);
@@ -38,6 +38,7 @@ export class ProductsComponent implements OnInit {
   }
 
   @ViewChild('closebutton') closebutton;
+  @ViewChild('modalButton') modalButton:ElementRef;
 
   product_type_clicked(event:Event){
     /*var html = event.target as HTMLElement;
@@ -60,6 +61,7 @@ export class ProductsComponent implements OnInit {
   onContactClicked(event: Event){
     var html= event.target as HTMLElement;
     this.contactProduct= html.id;
+    this.modalButton.nativeElement=html;
   }
 
   onContactSubmit(contactEnquiryForm){
@@ -78,6 +80,13 @@ export class ProductsComponent implements OnInit {
 
   }
 
-  unfocus(event:Event){}
+  unfocus(){
 
+    console.log(this.modalButton.nativeElement);
+    setTimeout(() => {
+      this.modalButton.nativeElement.focus();
+    }, 1);
+
+  }
 }
+
