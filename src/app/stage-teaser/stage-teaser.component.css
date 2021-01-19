@@ -15,7 +15,7 @@
   color: white;
   font-size: 2vw;
   position: absolute;
-  top: 44%;
+  top: 68%;
   transform: translateX(170%);
   z-index: 2;
   border: solid 3px white;
@@ -23,7 +23,7 @@
 
 .home-banner .home-banner-quote h3{
   font-size: 1.3vw;
-  letter-spacing: 2.25px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
   width: 100%;
@@ -44,13 +44,14 @@
   }
 
   .home-banner .home-banner-quote{
-    height: 50px;
-    transform: translateX(165%);
+    height: 70px;
+    width: 50%;
+    transform: translateX(50%);
     border: solid 2px white;
   }
 
   .home-banner .home-banner-quote h3{
-    font-size: 2vw;
+    font-size: 3vw;
   }
 }
 
@@ -60,11 +61,10 @@
     height: 500px;
   }
   .home-banner .home-banner-quote{
-    height: 61px;
-    font-size: 2vw;
+    height: 90px;
   }
   .home-banner .home-banner-quote h3{
-    font-size: 1.3vw;
+    font-size: 2vw;
   }
 }
 

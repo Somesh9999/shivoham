@@ -13,14 +13,12 @@ export class ContactService {
 
   addContactFormData(contactFormData:contactFormData){
     this.http.post<{message:string}>("https://stormy-peak-34323.herokuapp.com/api/contact/addContactFormData",contactFormData).subscribe(res=>{
-      console.log(res.message);
       this.router.navigate(['/']);
     });
   }
 
   addContactEnquiryData(contactEnquiryData:contactEnquiry){
     this.http.post<{message:string}>("https://stormy-peak-34323.herokuapp.com/api/contact/addContactEnquiryData",contactEnquiryData).subscribe(res=>{
-      console.log(res.message);
     });
   }
 

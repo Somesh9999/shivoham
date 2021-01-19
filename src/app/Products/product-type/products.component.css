@@ -4,7 +4,7 @@
 
 #product-type-list h3{
   color: #34c1bb;
-  font-size: 2.3vw;
+  font-size: 2.7vw;
   letter-spacing: 2.25px;
   text-transform: uppercase;
   font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
@@ -106,7 +106,7 @@
   border: solid 8px #34c1bb;
   border-bottom: 0;
   position: absolute;
-  width: 25%;
+  width: 55%;
   height: 60px;
   left: 50%;
   transform: translateX(-50%) translateY(-35px);
@@ -115,6 +115,11 @@
 .modal-content{
   border-radius: 25px;
   border: solid 8px #34c1bb;
+}
+
+.modal-header .modal-title{
+  width: 100%;
+  padding: 6%;
 }
 
 .modal-body h5{
@@ -132,6 +137,7 @@
 /*Media Queries*/
 
 @media (max-width: 576px) {
+
   #product-type-list h3:after{
     border-bottom: solid 1px #34c1bb;
   }
@@ -184,6 +190,9 @@
 }
 
 @media (min-width: 768px) {
+  #product-type-list h3{
+    font-size: 1.7vw;
+  }
   #product-type-list .card button:focus + .card{
     background-color:white;
   }
@@ -209,6 +218,10 @@
   #product-type-list .card button{
     font-size: 1.5vw;
   }
+  .modal-header .modal-title{
+    width: 95%;
+    padding: 4%;
+  }
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -217,7 +230,7 @@
     background-color:white;
   }
   #product-type-list h3{
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     width: 28%;
   }
   #product-type-list h3:after{
@@ -243,7 +256,7 @@
     background-color:white;
   }
   #product-type-list h3{
-    font-size: 1vw;
+    font-size: 1.2vw;
     width: 23%;
   }
   #product-type-list .card{
