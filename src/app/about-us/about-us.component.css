@@ -18,6 +18,7 @@
   letter-spacing: 1px;
   font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
   font-weight: 600;
+  line-height: 15px;
 }
 
 .company-hist-body{
@@ -40,8 +41,11 @@
   font-size: 1.7vw;
 }
 
-.company-hist-footer p{
+.company-hist-footer p, .company-hist-footer a{
   font-size: 2vw;
+  text-decoration: none;
+  color: #34c1bb;
+
 }
 
 /*Media Queries*/
@@ -63,7 +67,11 @@
     font-size: 1vw;
   }
 
-  .company-hist-footer p{
+  .company-hist-footer{
+    line-height: 17px;
+  }
+
+  .company-hist-footer p, .company-hist-footer a{
     font-size: 1.5vw;
   }
 
@@ -81,11 +89,14 @@
   .company-hist-header p{
     font-size: 0.8vw;
   }
-  .company-hist-footer p{
+  .company-hist-footer p, .company-hist-footer a{
     font-size: 1.3vw;
   }
   .company-hist-body{
     font-size: 1.3vw;
+  }
+  .company-hist-footer{
+    line-height: 25px;
   }
 }
 
@@ -97,11 +108,20 @@
   .company-hist-header p{
     font-size: 0.7vw;
   }
-  .company-hist-footer p{
+  .company-hist-footer p, .company-hist-footer a{
     font-size: 1vw;
   }
   .company-hist-body{
     font-size: 1vw;
+  }
+  .company-hist-footer{
+    line-height: 30px;
+  }
+}
+
+@media (min-width: 2500px) {
+  .company-hist-footer{
+    line-height: 42px;
   }
 }
 
