@@ -1,4 +1,5 @@
-<div class="row" id="product-type-list" >
+<mat-spinner *ngIf="this.matSpinner" [diameter]="70"></mat-spinner>
+<div class="row" id="product-type-list" *ngIf="!this.matSpinner" >
   <div class="col-12 p-0">
     <div class="container mt-5">
       <div class="row">
@@ -7,8 +8,9 @@
         </div>
       </div>
       <div class="row row-cols-2 row-cols-sm-2  row-cols-md-3 g-4 mt-2">
+
         <div class="col" *ngFor="let product_type of product_types">
-          <div class="card text-center text-light" style="width: 100%;">
+          <div class="card text-center text-light" style="width: 100%;" >
             <div class="product-type-overlay"></div>
             <img src="../../../assets/{{product_type.type}}.jpg" class="card-img-top" alt="...">
             <div class="card-body bg-dark">

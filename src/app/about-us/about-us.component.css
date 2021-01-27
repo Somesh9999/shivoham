@@ -5,7 +5,7 @@
 
 .company-hist-header{
   text-align: center;
-  color: #34c1bb;
+  color: #b26507;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
@@ -14,7 +14,7 @@
 
 .company-hist-footer{
   text-align: center;
-  color: #34c1bb;
+  color: #b26507;
   letter-spacing: 1px;
   font-family: "Brandon Bold",Helvetica,Arial,sans-serif;
   font-weight: 600;
@@ -44,7 +44,7 @@
 .company-hist-footer p, .company-hist-footer a{
   font-size: 2vw;
   text-decoration: none;
-  color: #34c1bb;
+  color: #b26507;
 
 }
 

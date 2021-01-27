@@ -134,6 +134,12 @@
   border: none;
 }
 
+mat-spinner{
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+
 /*Media Queries*/
 
 @media (max-width: 576px) {

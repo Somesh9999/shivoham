@@ -16,7 +16,7 @@ export class ProductsComponent implements OnInit {
 
   product_types:productType[]=[];
   sub=new Subscription();
-
+  matSpinner=false
   contactProduct:string;
   contactEnquiryData:contactEnquiry;
 
@@ -29,10 +29,12 @@ export class ProductsComponent implements OnInit {
   constructor(private router:Router, private productService:ProductService, private contactService:ContactService,private el: ElementRef) { }
 
   ngOnInit(): void {
+    this.matSpinner=true;
     this.productService.getProductType(this.pageSize,this.currentPage);
     this.sub=this.productService.getProductTypeSubject().subscribe((productData=>{
       this.product_types=productData.productType;
       this.totalPosts=productData.productCount;
+      this.matSpinner=false;
     }))
   }
 

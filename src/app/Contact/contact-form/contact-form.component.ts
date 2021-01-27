@@ -5,6 +5,7 @@ import { stageInfo } from 'src/app/stage-teaser/stageInfo.model';
 import { contactFormData } from '../contact-form-data.model';
 import { ContactService } from '../contact.service';
 
+
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
@@ -15,6 +16,7 @@ export class ContactFormComponent implements OnInit,OnDestroy {
   stageInfo:stageInfo;
   contactFormData:contactFormData;
   sub:Subscription;
+  matSpinner=false;
 
   constructor(private activatedRoute:ActivatedRoute, private contactService:ContactService) { }
 
@@ -31,6 +33,7 @@ export class ContactFormComponent implements OnInit,OnDestroy {
     if(navContactForm.invalid){
       return;
     }
+    this.matSpinner=true;
     this.contactFormData={
       name:navContactForm.value.name,
       subject:navContactForm.value.subject,
@@ -40,7 +43,7 @@ export class ContactFormComponent implements OnInit,OnDestroy {
     };
 
     this.contactService.addContactFormData(this.contactFormData);
-    navContactForm.reset();
+
   }
 
   ngOnDestroy(){

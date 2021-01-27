@@ -1,7 +1,8 @@
+<mat-spinner *ngIf="this.matSpinner" [diameter]="70"></mat-spinner>
 <app-stage-teaser [stageInfo]="this.stageInfo"></app-stage-teaser>
 <div class="row">
   <div class="col-12">
-    <div class="container contact-form-container">
+    <div class="container contact-form-container" *ngIf="!this.matSpinner">
       <h3 class="text-center mt-5">Let's Talk</h3>
       <form #navContactForm="ngForm" (ngSubmit)="onContactFormSubmit(navContactForm)">
         <mat-form-field >

@@ -7,3 +7,13 @@ body,html{
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #34c1bb;
+}
+
+
+.mat-simple-snackbar-action {
+    color: #34c1bb !important;
+}
+
